@@ -204,8 +204,19 @@ const App = () => {
 	setOkMessage(
           `Name '${returnedlPerson.name}' was succesfully added to the server`
         )
+
         setTimeout(() => {
           setOkMessage(null)
+        }, 5000)
+      })
+
+      .catch(error => {
+        setErrorMessage(
+          //`400 Bad Request`
+          `400 Bad Request : '${error.message}'`
+        )
+        setTimeout(() => {
+          setErrorMessage(null)
         }, 5000)
       })
     }
