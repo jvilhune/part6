@@ -113,6 +113,9 @@ const App = () => {
 
   const [time, setTime] = useState(new Date());
 
+  const helptag = 'For example : Write "|A" and get only names starts at "A" or "a"'
+  const helptag2 = '( | is logical OR operator, pipe, vertical bar, ALT GR + ><| KEY on PC keyboard )'
+
   /* useEffect()-koukkua kaytetaan maarittamaan aikavali, joka kutsuu */
   /* setTime()-funktiota 10000 millisekunnin (tai 10 sekunnin) valein. */
   /* Tama saa komponentin renderoimaan uudelleen nykyisen ajan kanssa aina, */
@@ -286,6 +289,8 @@ const App = () => {
       <Oknotification message={okMessage} />
       <div>
         filter shown with: <Filter value1={fboxName} value2={handlefboxNameChange} />
+       <h4> {helptag}</h4>
+       <h4> {helptag2}</h4>
       </div>
       <h3>add a new</h3>
         <PersonForm subaction={addPerson} fieldname1='name: ' value1={newName} value2={handleNameChange} fieldname2='number: ' value3={newNumber} value4={handleNumberChange} type={'submit'} text='add' />
