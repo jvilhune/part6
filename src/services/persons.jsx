@@ -4,12 +4,12 @@ import axios from 'axios'
 //const baseUrl = 'http://localhost:3001/persons'
 
 //KUN TESTATAAN FRONTENDIA JA BACKENDIA YHDESSA -> BACKEND SERVER ADDRESS
-const baseUrl = 'http://localhost:3001/api/persons'
+//const baseUrl = 'http://localhost:3001/api/persons'
 
 //KUN TESTATAAN FRONTENDIA JA BACKENDIA YHDESSA -> BACKEND SERVER ADDRESS
 //KUN TUOTANTOSOVELLUS VIEDAAN INTERNETIIN -> SUHTEELLINEN OSOITE
 //MUUTA MYOS TIEDOSTON C:\Users\PC\persons\vite.config.js SISALTO
-//const baseUrl = 'api/persons'
+const baseUrl = 'api/persons'
 
 const getAll = () => {
   const request = axios.get(baseUrl)
