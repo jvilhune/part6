@@ -211,17 +211,33 @@ const App = () => {
         setTimeout(() => {
           setOkMessage(null)
         }, 5000)
-      })
-
+      }) 
+     
       .catch(error => {
-        setErrorMessage(
-          //`400 Bad Request`
-          `400 Bad Request : '${error.message}'`
+
+        //error.message -> Request failed with status code 400
+	//error.response.data.error -> Person validation failed: number: 11-22-33-44 is not a valid phone number!
+
+        //error.errno -> undefined
+        //error.stack -> 400 Bad Request : AxiosError@http://localhost:5173/node_modules/ jne jne jne
+        //error.syscall -> undefined
+        //error.name -> AxiosError
+        //error.code -> ERR_BAD_REQUEST
+        //error.response -> [object Object]
+        //error.response.data -> [object Object]
+        //error.config -> [object Object]
+        //error.request -> [object XMLHttpRequest]
+        //error.response.status -> 400
+	//error.response.headers -> content-length: 86 content-type: application/json; charset=utf-8
+
+        /* error :  Person validation failed: number: 11-22-33-44 is not a valid phone number! Request failed with status code 400 */
+        setErrorMessage(          
+          `error : ${error.response.data.error} ${error.message}`
         )
         setTimeout(() => {
           setErrorMessage(null)
         }, 5000)
-      })
+      })      
     }
   }
 
